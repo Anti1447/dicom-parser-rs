@@ -13,11 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # - name: Use rust toolchain
-    #   uses: actions-rs/toolchain@v1
-    #   with:
-    #     components: rustfmt, clippy
-
     - name: Run all rust tests
       uses: actions-rs/cargo@v1
       with:
@@ -27,7 +22,7 @@ jobs:
       uses: actions-rs/cargo@v1
       with:
         command: clippy
-        args: --all --tests -- -D warnings
+        args: --all --tests
 
     - name: Check rust formatting
       uses: actions-rs/cargo@v1
